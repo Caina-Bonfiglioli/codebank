@@ -15,86 +15,86 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// PaymantServiceClient is the client API for PaymantService service.
+// PaymentServiceClient is the client API for PaymentService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type PaymantServiceClient interface {
-	Paymant(ctx context.Context, in *PaymantRequest, opts ...grpc.CallOption) (*empty.Empty, error)
+type PaymentServiceClient interface {
+	Payment(ctx context.Context, in *PaymentRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 }
 
-type paymantServiceClient struct {
+type paymentServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewPaymantServiceClient(cc grpc.ClientConnInterface) PaymantServiceClient {
-	return &paymantServiceClient{cc}
+func NewPaymentServiceClient(cc grpc.ClientConnInterface) PaymentServiceClient {
+	return &paymentServiceClient{cc}
 }
 
-func (c *paymantServiceClient) Paymant(ctx context.Context, in *PaymantRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+func (c *paymentServiceClient) Payment(ctx context.Context, in *PaymentRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/paymant.PaymantService/Paymant", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/payment.PaymentService/Payment", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// PaymantServiceServer is the server API for PaymantService service.
-// All implementations must embed UnimplementedPaymantServiceServer
+// PaymentServiceServer is the server API for PaymentService service.
+// All implementations must embed UnimplementedPaymentServiceServer
 // for forward compatibility
-type PaymantServiceServer interface {
-	Paymant(context.Context, *PaymantRequest) (*empty.Empty, error)
-	mustEmbedUnimplementedPaymantServiceServer()
+type PaymentServiceServer interface {
+	Payment(context.Context, *PaymentRequest) (*empty.Empty, error)
+	mustEmbedUnimplementedPaymentServiceServer()
 }
 
-// UnimplementedPaymantServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedPaymantServiceServer struct {
+// UnimplementedPaymentServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedPaymentServiceServer struct {
 }
 
-func (UnimplementedPaymantServiceServer) Paymant(context.Context, *PaymantRequest) (*empty.Empty, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Paymant not implemented")
+func (UnimplementedPaymentServiceServer) Payment(context.Context, *PaymentRequest) (*empty.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Payment not implemented")
 }
-func (UnimplementedPaymantServiceServer) mustEmbedUnimplementedPaymantServiceServer() {}
+func (UnimplementedPaymentServiceServer) mustEmbedUnimplementedPaymentServiceServer() {}
 
-// UnsafePaymantServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to PaymantServiceServer will
+// UnsafePaymentServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to PaymentServiceServer will
 // result in compilation errors.
-type UnsafePaymantServiceServer interface {
-	mustEmbedUnimplementedPaymantServiceServer()
+type UnsafePaymentServiceServer interface {
+	mustEmbedUnimplementedPaymentServiceServer()
 }
 
-func RegisterPaymantServiceServer(s grpc.ServiceRegistrar, srv PaymantServiceServer) {
-	s.RegisterService(&PaymantService_ServiceDesc, srv)
+func RegisterPaymentServiceServer(s grpc.ServiceRegistrar, srv PaymentServiceServer) {
+	s.RegisterService(&PaymentService_ServiceDesc, srv)
 }
 
-func _PaymantService_Paymant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PaymantRequest)
+func _PaymentService_Payment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PaymentRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(PaymantServiceServer).Paymant(ctx, in)
+		return srv.(PaymentServiceServer).Payment(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/paymant.PaymantService/Paymant",
+		FullMethod: "/payment.PaymentService/Payment",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymantServiceServer).Paymant(ctx, req.(*PaymantRequest))
+		return srv.(PaymentServiceServer).Payment(ctx, req.(*PaymentRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// PaymantService_ServiceDesc is the grpc.ServiceDesc for PaymantService service.
+// PaymentService_ServiceDesc is the grpc.ServiceDesc for PaymentService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var PaymantService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "paymant.PaymantService",
-	HandlerType: (*PaymantServiceServer)(nil),
+var PaymentService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "payment.PaymentService",
+	HandlerType: (*PaymentServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Paymant",
-			Handler:    _PaymantService_Paymant_Handler,
+			MethodName: "Payment",
+			Handler:    _PaymentService_Payment_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

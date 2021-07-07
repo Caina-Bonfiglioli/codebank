@@ -5,7 +5,7 @@ import (
 	uuid "github.com/satori/go.uuid"
 )
 
-type TransactionRespository interface {
+type TransactionRepository interface {
 	SaveTransaction(transaction Transaction, creditCard CreditCard) error
 	GetCreditCard(creditCard CreditCard) (CreditCard, error)
 	CreateCreditCard(creditCard CreditCard) error
@@ -28,7 +28,7 @@ func NewTransaction() *Transaction {
 	return t
 }
 
-func (t *Transaction) ProcessAndValidade(creditCard *CreditCard) {
+func (t *Transaction) ProcessAndValidate(creditCard *CreditCard) {
 	if t.Amount + creditCard.Balance > creditCard.Limit {
 		t.Status = "rejected"
 	} else {

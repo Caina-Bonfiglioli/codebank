@@ -2,6 +2,7 @@ package repository
 
 import (
 	"database/sql"
+	"errors"
 	"github.com/Caina-Bonfiglioli/codebank/domain"
 )
 

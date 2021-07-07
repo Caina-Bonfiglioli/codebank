@@ -1,14 +1,14 @@
 syntax = "proto3";
-package paymant;
+package payment;
 option go_package = "grpc/pb";
 
 import "google/protobuf/empty.proto";
 
-service PaymantService {
-  rpc Paymant(PaymantRequest) returns (google.protobuf.Empty) {}
+service PaymentService {
+  rpc Payment(PaymentRequest) returns (google.protobuf.Empty) {}
 }
 
-message PaymantRequest {
+message PaymentRequest {
   message CreditCard {
     string name = 1;
     string number = 2;

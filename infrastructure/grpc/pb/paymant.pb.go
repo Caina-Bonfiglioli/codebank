@@ -21,19 +21,19 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type PaymantRequest struct {
+type PaymentRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CreditCard  *PaymantRequest_CreditCard `protobuf:"bytes,1,opt,name=creditCard,proto3" json:"creditCard,omitempty"`
+	CreditCard  *PaymentRequest_CreditCard `protobuf:"bytes,1,opt,name=creditCard,proto3" json:"creditCard,omitempty"`
 	Amount      float64                    `protobuf:"fixed64,2,opt,name=amount,proto3" json:"amount,omitempty"`
 	Store       string                     `protobuf:"bytes,3,opt,name=store,proto3" json:"store,omitempty"`
 	Description string                     `protobuf:"bytes,4,opt,name=description,proto3" json:"description,omitempty"`
 }
 
-func (x *PaymantRequest) Reset() {
-	*x = PaymantRequest{}
+func (x *PaymentRequest) Reset() {
+	*x = PaymentRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_protofile_paymant_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -41,13 +41,13 @@ func (x *PaymantRequest) Reset() {
 	}
 }
 
-func (x *PaymantRequest) String() string {
+func (x *PaymentRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*PaymantRequest) ProtoMessage() {}
+func (*PaymentRequest) ProtoMessage() {}
 
-func (x *PaymantRequest) ProtoReflect() protoreflect.Message {
+func (x *PaymentRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_protofile_paymant_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -59,40 +59,40 @@ func (x *PaymantRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use PaymantRequest.ProtoReflect.Descriptor instead.
-func (*PaymantRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use PaymentRequest.ProtoReflect.Descriptor instead.
+func (*PaymentRequest) Descriptor() ([]byte, []int) {
 	return file_protofile_paymant_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *PaymantRequest) GetCreditCard() *PaymantRequest_CreditCard {
+func (x *PaymentRequest) GetCreditCard() *PaymentRequest_CreditCard {
 	if x != nil {
 		return x.CreditCard
 	}
 	return nil
 }
 
-func (x *PaymantRequest) GetAmount() float64 {
+func (x *PaymentRequest) GetAmount() float64 {
 	if x != nil {
 		return x.Amount
 	}
 	return 0
 }
 
-func (x *PaymantRequest) GetStore() string {
+func (x *PaymentRequest) GetStore() string {
 	if x != nil {
 		return x.Store
 	}
 	return ""
 }
 
-func (x *PaymantRequest) GetDescription() string {
+func (x *PaymentRequest) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-type PaymantRequest_CreditCard struct {
+type PaymentRequest_CreditCard struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -104,8 +104,8 @@ type PaymantRequest_CreditCard struct {
 	Cvv             int32  `protobuf:"varint,5,opt,name=cvv,proto3" json:"cvv,omitempty"`
 }
 
-func (x *PaymantRequest_CreditCard) Reset() {
-	*x = PaymantRequest_CreditCard{}
+func (x *PaymentRequest_CreditCard) Reset() {
+	*x = PaymentRequest_CreditCard{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_protofile_paymant_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -113,13 +113,13 @@ func (x *PaymantRequest_CreditCard) Reset() {
 	}
 }
 
-func (x *PaymantRequest_CreditCard) String() string {
+func (x *PaymentRequest_CreditCard) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*PaymantRequest_CreditCard) ProtoMessage() {}
+func (*PaymentRequest_CreditCard) ProtoMessage() {}
 
-func (x *PaymantRequest_CreditCard) ProtoReflect() protoreflect.Message {
+func (x *PaymentRequest_CreditCard) ProtoReflect() protoreflect.Message {
 	mi := &file_protofile_paymant_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -131,40 +131,40 @@ func (x *PaymantRequest_CreditCard) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use PaymantRequest_CreditCard.ProtoReflect.Descriptor instead.
-func (*PaymantRequest_CreditCard) Descriptor() ([]byte, []int) {
+// Deprecated: Use PaymentRequest_CreditCard.ProtoReflect.Descriptor instead.
+func (*PaymentRequest_CreditCard) Descriptor() ([]byte, []int) {
 	return file_protofile_paymant_proto_rawDescGZIP(), []int{0, 0}
 }
 
-func (x *PaymantRequest_CreditCard) GetName() string {
+func (x *PaymentRequest_CreditCard) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *PaymantRequest_CreditCard) GetNumber() string {
+func (x *PaymentRequest_CreditCard) GetNumber() string {
 	if x != nil {
 		return x.Number
 	}
 	return ""
 }
 
-func (x *PaymantRequest_CreditCard) GetExpirationMonth() int32 {
+func (x *PaymentRequest_CreditCard) GetExpirationMonth() int32 {
 	if x != nil {
 		return x.ExpirationMonth
 	}
 	return 0
 }
 
-func (x *PaymantRequest_CreditCard) GetExpirationYear() int32 {
+func (x *PaymentRequest_CreditCard) GetExpirationYear() int32 {
 	if x != nil {
 		return x.ExpirationYear
 	}
 	return 0
 }
 
-func (x *PaymantRequest_CreditCard) GetCvv() int32 {
+func (x *PaymentRequest_CreditCard) GetCvv() int32 {
 	if x != nil {
 		return x.Cvv
 	}
@@ -175,13 +175,13 @@ var File_protofile_paymant_proto protoreflect.FileDescriptor
 
 var file_protofile_paymant_proto_rawDesc = []byte{
 	0x0a, 0x17, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x2f, 0x70, 0x61, 0x79, 0x6d,
-	0x61, 0x6e, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x70, 0x61, 0x79, 0x6d, 0x61,
+	0x61, 0x6e, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x70, 0x61, 0x79, 0x6d, 0x65,
 	0x6e, 0x74, 0x1a, 0x1b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x62, 0x75, 0x66, 0x2f, 0x65, 0x6d, 0x70, 0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22,
-	0xc3, 0x02, 0x0a, 0x0e, 0x50, 0x61, 0x79, 0x6d, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0xc3, 0x02, 0x0a, 0x0e, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
 	0x73, 0x74, 0x12, 0x42, 0x0a, 0x0a, 0x63, 0x72, 0x65, 0x64, 0x69, 0x74, 0x43, 0x61, 0x72, 0x64,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x70, 0x61, 0x79, 0x6d, 0x61, 0x6e, 0x74,
-	0x2e, 0x50, 0x61, 0x79, 0x6d, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x22, 0x2e, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74,
+	0x2e, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e,
 	0x43, 0x72, 0x65, 0x64, 0x69, 0x74, 0x43, 0x61, 0x72, 0x64, 0x52, 0x0a, 0x63, 0x72, 0x65, 0x64,
 	0x69, 0x74, 0x43, 0x61, 0x72, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74,
 	0x18, 0x02, 0x20, 0x01, 0x28, 0x01, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x14,
@@ -198,10 +198,10 @@ var file_protofile_paymant_proto_rawDesc = []byte{
 	0x78, 0x70, 0x69, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x59, 0x65, 0x61, 0x72, 0x18, 0x04, 0x20,
 	0x01, 0x28, 0x05, 0x52, 0x0e, 0x65, 0x78, 0x70, 0x69, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x59,
 	0x65, 0x61, 0x72, 0x12, 0x10, 0x0a, 0x03, 0x63, 0x76, 0x76, 0x18, 0x05, 0x20, 0x01, 0x28, 0x05,
-	0x52, 0x03, 0x63, 0x76, 0x76, 0x32, 0x4e, 0x0a, 0x0e, 0x50, 0x61, 0x79, 0x6d, 0x61, 0x6e, 0x74,
-	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3c, 0x0a, 0x07, 0x50, 0x61, 0x79, 0x6d, 0x61,
-	0x6e, 0x74, 0x12, 0x17, 0x2e, 0x70, 0x61, 0x79, 0x6d, 0x61, 0x6e, 0x74, 0x2e, 0x50, 0x61, 0x79,
-	0x6d, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f,
+	0x52, 0x03, 0x63, 0x76, 0x76, 0x32, 0x4e, 0x0a, 0x0e, 0x50, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74,
+	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3c, 0x0a, 0x07, 0x50, 0x61, 0x79, 0x6d, 0x65,
+	0x6e, 0x74, 0x12, 0x17, 0x2e, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x50, 0x61, 0x79,
+	0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
 	0x70, 0x74, 0x79, 0x22, 0x00, 0x42, 0x09, 0x5a, 0x07, 0x67, 0x72, 0x70, 0x63, 0x2f, 0x70, 0x62,
 	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
@@ -221,14 +221,14 @@ func file_protofile_paymant_proto_rawDescGZIP() []byte {
 
 var file_protofile_paymant_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_protofile_paymant_proto_goTypes = []interface{}{
-	(*PaymantRequest)(nil),            // 0: paymant.PaymantRequest
-	(*PaymantRequest_CreditCard)(nil), // 1: paymant.PaymantRequest.CreditCard
+	(*PaymentRequest)(nil),            // 0: payment.PaymentRequest
+	(*PaymentRequest_CreditCard)(nil), // 1: payment.PaymentRequest.CreditCard
 	(*empty.Empty)(nil),               // 2: google.protobuf.Empty
 }
 var file_protofile_paymant_proto_depIdxs = []int32{
-	1, // 0: paymant.PaymantRequest.creditCard:type_name -> paymant.PaymantRequest.CreditCard
-	0, // 1: paymant.PaymantService.Paymant:input_type -> paymant.PaymantRequest
-	2, // 2: paymant.PaymantService.Paymant:output_type -> google.protobuf.Empty
+	1, // 0: payment.PaymentRequest.creditCard:type_name -> payment.PaymentRequest.CreditCard
+	0, // 1: payment.PaymentService.Payment:input_type -> payment.PaymentRequest
+	2, // 2: payment.PaymentService.Payment:output_type -> google.protobuf.Empty
 	2, // [2:3] is the sub-list for method output_type
 	1, // [1:2] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -243,7 +243,7 @@ func file_protofile_paymant_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_protofile_paymant_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PaymantRequest); i {
+			switch v := v.(*PaymentRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -255,7 +255,7 @@ func file_protofile_paymant_proto_init() {
 			}
 		}
 		file_protofile_paymant_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PaymantRequest_CreditCard); i {
+			switch v := v.(*PaymentRequest_CreditCard); i {
 			case 0:
 				return &v.state
 			case 1:
